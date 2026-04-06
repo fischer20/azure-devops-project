@@ -1,100 +1,110 @@
-# 🚀 DevOps Azure Project with Full Monitoring
+## DevOps Azure Project – CI/CD, Terraform & Monitoring
 
-## 📌 Description
+## Description
 
-Ce projet met en place une chaîne DevOps professionnelle complète avec :
+Ce projet met en œuvre une chaîne DevOps complète sur Microsoft Azure, incluant déploiement automatisé, Infrastructure as Code, conteneurisation et monitoring applicatif.
 
-- Application Node.js / Express
-- Conteneurisation Docker
-- Déploiement Azure App Service
-- CI/CD avec GitHub Actions
-- Infrastructure as Code avec Terraform
-- Monitoring complet avec :
-  - Application Insights
-  - Log Analytics Workspace
-  - Alertes Azure Monitor
-  - Health checks
-  - Logs applicatifs
+Il démontre une approche professionnelle de mise en production d’une application cloud-native avec supervision et observabilité.
 
 ---
 
-## 🏗️ Architecture
+## Stack technique
 
-![Azur Architecture](docs/images/architecture.png)
+- **Node.js / Express**
+- **Docker**
+- **GitHub Actions (CI/CD)**
+- **Terraform (Infrastructure as Code)**
+- **Microsoft Azure**
+  - Azure App Service
+  - Application Insights
+  - Log Analytics Workspace
+  - Azure Monitor
 
-## Technologies utilisées
+---
 
-- Node.js
-- Express
-- Docker
-- GitHub Actions
-- Azure App Service
-- Terraform
-- Azure Application Insights
-- Azure Log Analytics
-- Azure Monitor
+## Architecture
 
-1. Prérequis
+![Azure Architecture](docs/images/architecture.png)
 
-Avant de commencer, il faut avoir :
+L’application est conteneurisée avec Docker, déployée sur Azure App Service et supervisée via Azure Monitor, Application Insights et Log Analytics.
 
-- un compte Azure
+---
+
+## Fonctionnalités principales
+
+- Déploiement automatisé sur Azure
+- Infrastructure as Code avec Terraform
+- Pipeline CI/CD GitHub Actions
+- Monitoring et observabilité applicative
+- Centralisation des logs
+- Alerting Azure Monitor
+- Health check applicatif
+
+---
+
+## Prérequis
+
+Avant de commencer :
+
+- Un compte Azure
 - Azure CLI installé
 - Terraform installé
 - Docker installé
 - Node.js installé
-- un dépôt GitHub
+- Un dépôt GitHub
 
-2. Lancer l’application en local
 
-- cd app
-- npm install
-- node app.js
+## Lancer l’application en local
 
-Tester :
+cd app
+npm install
+npm run dev
+
+---
+
+Accès :
 
 - http://localhost:3000
 - http://localhost:3000/health
 
-3. Docker
+## Docker
 
-Construire l’image
+Construire l’image :
 - docker build -t devops-app -f docker/Dockerfile .
-- Lancer le conteneur
+
+Lancer le conteneur :
 - docker run -p 3000:3000 devops-app
 
-4. Déployer l’infrastructure Azure avec Terraform
-
-Initialiser Terraform
+## Déployer l’infrastructure Azure avec Terraform
 
 - cd terraform
 - terraform init
 - terraform plan
 - terraform apply
 
-Terraform crée :
+Ressources crées :
 
 - Resource Group
 - App Service Plan
 - Linux Web App
-- Log Analytics Workspace
 - Application Insights
-- Azure Monitor Action Group
-- Alertes CPU / temps de réponse / disponibilité
+- Log Analytics Workspace
+- Azure Monitor Alerts
 
-5. Configurer GitHub Actions
+## Configurer GitHub Actions
 
 Dans GitHub :
 
 ouvrir le dépôt
 
 - aller dans Settings > Secrets and variables > Actions
-- ajouter le secret :
+
+ajouter le secret :
 - AZURE_WEBAPP_PUBLISH_PROFILE
 
 Ce secret contient le Publish Profile de l’application Azure.
 
-6. CI/CD
+## CI/CD
 
 À chaque push sur la branche main, le pipeline exécute :
 
@@ -104,34 +114,25 @@ Ce secret contient le Publish Profile de l’application Azure.
 - build Docker
 - déploiement Azure
 
-7. Monitoring complet
+## Monitoring complet
 
-7.1 Application Insights
-
-Permet de suivre :
+Application Insights : permet de suivre :
 
 - requêtes HTTP
 - temps de réponse
-- erreurs
-- exceptions
+- erreurs et exceptions
 - événements personnalisés
-- traces applicatives
+- traces applications
 
-7.2 Log Analytics Workspace
+Log Analytics Workspace : centralise les logs et métriques Azure.
 
-Centralise les logs et métriques Azure.
-
-7.3 Azure Monitor Alerts
-
-Des alertes sont configurées sur :
+Azure Monitor Alerts : des alertes sont configurées sur :
 
 - CPU élevée
 - temps de réponse trop long
 - disponibilité faible
 
-7.4 Healthcheck
-
-L’endpoint /health permet à Azure de vérifier que l’application répond correctement.
+Healthcheck : L’endpoint /health permet à Azure de vérifier que l’application répond correctement.
 
 Exemple :
 
@@ -144,19 +145,11 @@ Réponse attendue :
   "timestamp": "2026-03-30T10:00:00.000Z"
 }
 
-7.5 Logs applicatifs
-
-Chaque requête est loguée dans la console et envoyée à Application Insights.
-
-8. Tester les erreurs
-
-Pour tester la remontée d’erreurs dans Application Insights :
+Tester les erreurs : pour tester la remontée d’erreurs dans Application Insights :
 
 - GET /error-test
 
-Cela génère volontairement une exception.
-
-9. Vérifications après déploiement
+## Vérifications après déploiement
 
 Dans Azure Portal, vérifier :
 
@@ -167,29 +160,17 @@ Dans Azure Portal, vérifier :
 - alertes créées
 - métriques collectées
 
-10. Améliorations possibles
+## Améliorations possibles
 
 - tests unitaires réels avec Jest
 - déploiement multi-environnements (dev / prod)
-- slots de déploiement Azure
 - dashboards Azure Monitor
-- disponibilité avec tests synthétiques
-- gestion des secrets via Azure Key Vault
-- conteneurisation dans Azure Container Registry
+- Gestion des secrets via Azure Key Vault
+- Azure Container Registry
 - Kubernetes avec AKS
 
-11. Valeur professionnelle du projet
-
-Ce projet démontre :
-
-- CI/CD moderne
-- déploiement cloud sur Azure
-- Infrastructure as Code
-- observabilité applicative
-- supervision et alerting
-- bonnes pratiques DevOps
 
 👨‍💻 Auteur
 
 Fischer KOUEBENA BANKAZI
-- Ingénieure cloud AZUR
+- Ingénieure Cloud AZURE
