@@ -1,18 +1,23 @@
 const express = require("express");
+const path = require("path");
+
 const app = express();
 
-// Middleware de log simple
+// Middleware de log
 app.use((req, res, next) => {
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
   next();
 });
 
-// Route principale
+// Servir les fichiers statiques (HTML, CSS, JS)
+app.use(express.static(path.join(__dirname, "public")));
+
+// Page d'accueil
 app.get("/", (req, res) => {
-  res.send("Mon serveur Node.js fonctionne sur Azure by Fischer KB ...  🚀");
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-// Route health check
+// Health check
 app.get("/health", (req, res) => {
   res.status(200).json({
     status: "UP",
@@ -20,12 +25,12 @@ app.get("/health", (req, res) => {
   });
 });
 
-// Route de test d'erreur (utile pour Application Insights / logs)
+// Route de test d'erreur
 app.get("/error-test", (req, res) => {
   throw new Error("Erreur volontaire pour test monitoring");
 });
 
-// Gestion simple des erreurs
+// Gestion des erreurs
 app.use((err, req, res, next) => {
   console.error("Erreur capturée :", err.message);
   res.status(500).json({
@@ -34,11 +39,9 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Très important pour Azure App Service
+// Port Azure / local
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
   console.log(`Serveur lancé sur le port ${port}`);
 });
-
-
