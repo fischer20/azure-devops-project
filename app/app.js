@@ -9,7 +9,7 @@ app.use((req, res, next) => {
 
 // Route principale
 app.get("/", (req, res) => {
-  res.send("Mon serveur Node.js fonctionne sur Azure 🚀");
+  res.send("Mon serveur Node.js fonctionne sur Azure by Fischer KB ...  🚀");
 });
 
 // Route health check
