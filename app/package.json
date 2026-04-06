@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "test": "echo \"No tests yet\""
+    "test": "echo \"No tests yet\" && exit 0"
   },
   "dependencies": {
     "applicationinsights": "^3.4.0",
