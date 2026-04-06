@@ -63,5 +63,14 @@ jobs:
       - name: Post-deployment health check
         run: |
           echo "Waiting for Azure app to restart..."
-          sleep 20
-          curl -f https://app-devops-project-sdkg.azurewebsites.net/health
+          for i in {1..10}; do
+            echo "Health check attempt $i..."
+            if curl -f https://app-devops-project-sdkg.azurewebsites.net/health; then
+              echo "Application is healthy!"
+              exit 0
+            fi
+            echo "App not ready yet, waiting 15 seconds..."
+            sleep 15
+          done
+          echo "Health check failed after multiple attempts."
+          exit 1
