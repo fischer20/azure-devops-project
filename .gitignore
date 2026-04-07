@@ -1,18 +1,28 @@
+# Node.js
 node_modules/
 app/node_modules/
+
+# Environment variables
 .env
-.terraform/
-terraform/.terraform/
-terraform/.terraform.lock.hcl
-*.tfstate
-*.tfstate.*
-node_modules/
-app/node_modules/
-.env
+.env.*
+
+# Terraform
 .terraform/
 terraform/.terraform/
 terraform/.terraform.lock.hcl
 terraform/terraform.tfvars
 *.tfstate
 *.tfstate.*
+
+# macOS
 .DS_Store
+__MACOSX/
+
+# Logs
+*.log
+
+# VS Code
+.vscode/
+
+# Optional: Terraform plan files
+*.tfplan
