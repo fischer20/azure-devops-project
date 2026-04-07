@@ -30,6 +30,15 @@ L’application est conteneurisée avec Docker, déployée sur Azure App Service
 
 ---
 
+## Screenshots 
+
+![Azure App-home](docs/images/app-home.png)
+---
+![Azure Github-actions-success](docs/images/github-actions-success.png)
+---
+![Azure Azure-app-service](docs/images/azure-app-service.png)
+---
+
 ## Fonctionnalités principales
 
 - Déploiement automatisé sur Azure
