@@ -169,8 +169,12 @@ Dans Azure Portal, vérifier :
 - Azure Container Registry
 - Kubernetes avec AKS
 
+## Liens utiles
+- Portofolio : www.kbf-devops.fr
+- GitHub : GitHub.com/fischer20/azure-devops-project
 
 👨‍💻 Auteur
 
 Fischer KOUEBENA BANKAZI
-- Ingénieure Cloud AZURE
+- Ingénieure Cloud & DevOps
+- Azure • Entra ID • Microsoft 365 • Terraform • Docker • CI/CD
