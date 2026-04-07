@@ -30,12 +30,22 @@ L’application est conteneurisée avec Docker, déployée sur Azure App Service
 
 ---
 
-## Screenshots 
+## Screenshots
+
+Vue de l’application déployée avec les principales technologies utilisées. 
 
 ![Azure App-home](docs/images/app-home.png)
 ---
+### CI/CD Pipeline (GitHub Actions)
+
+Exécution réussie du pipeline CI/CD pour le déploiement automatique sur Azure.
+
 ![Azure Github-actions-success](docs/images/github-actions-success.png)
 ---
+## Azure Deployment (App Service)
+
+Application déployée sur Azure App Service avec suivi des métriques et performances.
+
 ![Azure Azure-app-service](docs/images/azure-app-service.png)
 ---
 
