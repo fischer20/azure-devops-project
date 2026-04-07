@@ -65,9 +65,9 @@ Avant de commencer :
 
 ## Lancer l’application en local
 
-cd app
-npm install
-npm run dev
+- cd app
+- npm install
+- npm run dev
 
 ---
 
