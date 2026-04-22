@@ -42,7 +42,7 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-          app-name: "app-devops-project-sdkg"
+          app-name: "app-devops-project-wobj"
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: ./app
 
@@ -50,4 +50,4 @@ jobs:
         run: |
           echo "Waiting 30 seconds before checking Azure..."
           sleep 30
-          curl -i https://app-devops-project-sdkg.azurewebsites.net/health || true
+          curl -i https://app-devops-project-wobj.azurewebsites.net/health || true
