@@ -197,3 +197,4 @@ Dans Azure Portal, vérifier :
 Fischer KOUEBENA BANKAZI
 - Ingénieure Cloud & DevOps
 - Azure • Entra ID • Microsoft 365 • Terraform • Docker • CI/CD
+
