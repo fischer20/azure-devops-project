@@ -189,7 +189,7 @@ Dans Azure Portal, vérifier :
 - Kubernetes avec AKS
 
 ## Liens utiles
-- Portofolio : www.kbf-devops.fr
+- Portofolio : https://www.kbf-devops.fr/
 - GitHub : GitHub.com/fischer20/azure-devops-project
 
 👨‍💻 Auteur
